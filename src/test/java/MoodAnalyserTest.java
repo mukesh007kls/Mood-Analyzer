@@ -19,4 +19,10 @@ public class MoodAnalyserTest {
         assertEquals("SAD",mood);
     }
 
+    @Test
+    public void givenNULLMoodShouldReturnHappy(){
+        MoodAnalyser moodAnalyser=new MoodAnalyser(null);
+        String mood=moodAnalyser.analyserMood();
+        assertEquals("HAPPY",mood);
+    }
 }
