@@ -1,7 +1,7 @@
 package org.example;
 
 public class MoodAnalyserException extends Exception {
-    enum ExceptionType {
+    public enum ExceptionType {
         NULL, EMPTY
     }
 

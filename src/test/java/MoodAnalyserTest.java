@@ -1,5 +1,6 @@
 import org.example.MoodAnalyser;
 import org.example.MoodAnalyserException;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -27,6 +28,17 @@ public class MoodAnalyserTest {
             assertEquals("SAD", mood);
         } catch (MoodAnalyserException exception) {
             exception.printStackTrace();
+        }
+    }
+
+    @Test
+    public void giveNULLMoodShouldThrowMoodAnalyserException(){
+        MoodAnalyser moodAnalyser=new MoodAnalyser(null);
+        String mood;
+        try {
+            mood=moodAnalyser.analyserMood();
+        }catch (MoodAnalyserException exception){
+            Assert.assertSame(MoodAnalyserException.ExceptionType.NULL,exception.type);
         }
     }
 
