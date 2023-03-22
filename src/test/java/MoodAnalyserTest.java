@@ -19,10 +19,4 @@ public class MoodAnalyserTest {
         assertEquals("SAD",mood);
     }
 
-    @Test
-    public void givenMoodShouldReturnIncorrect(){
-        MoodAnalyser moodAnalyser=new MoodAnalyser("i am fine");
-        String mood=moodAnalyser.analyserMood();
-        assertEquals("Incorrect mood",mood);
-    }
 }
