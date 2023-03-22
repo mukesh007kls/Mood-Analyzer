@@ -42,4 +42,14 @@ public class MoodAnalyserTest {
         }
     }
 
+    @Test
+    public void giveEmptyMoodShouldThrowMoodAnalyserException(){
+        MoodAnalyser moodAnalyser=new MoodAnalyser("");
+        String mood;
+        try {
+            mood=moodAnalyser.analyserMood();
+        }catch (MoodAnalyserException exception){
+            Assert.assertSame(MoodAnalyserException.ExceptionType.EMPTY,exception.type);
+        }
+    }
 }
